@@ -1,6 +1,6 @@
 # New York City Squirrel Aggression
 Analyzing the New York city squirrel aggression problem.
-Project by: Mrinmayee Kulkarni, Andrew Grant, Kayla Harasymchuck, Katie Brizendine
+Project by: Mrinmayee Kulkarni, Andrew Grant, Kayla Harasymchuk, Katie Brizendine
 
 https://andrew-grant.shinyapps.io/project/
 Presentation: http://rpubs.com/agrant26/558175
@@ -10,11 +10,18 @@ In March of 2019, New York City brought forward a potential ban on feeding pigeo
 Hand-feeding squirrels comes with a host of other problems for the squirrels. As squirrels are readily supplied human food, they do not receive the same nutritional benefit as squirrels in the wild. In addition, this decreased reliance on foraging means squirrels lose much of their natural survival instinct.
 With the current data, we are targeting the behavior of gray squirrels as they make up the majority of squirrels in New York City. In addition, gray squirrels cause other problems as well, becoming a leading cause of power outages across the US due to chewing on power lines. We are looking to see whether the behaviors of the grey squirrels are more aggressive than other squirrels found in the park and develop a baseline measure for the squirrel’s fear to humans to determine if the ban has any effect over time. The aim of this app is to be used by New York legislature and civilians to learn more about the New York City squirrel population to decide if this ban should be implemented.
 
-Leaflet
+Leaflet: The map of the squirrel locations, their activities and interactions during a given time of the day
+
 ![Leaflet](images/leaflet.PNG)
-Shift AM-PM
+
+Shift: Understanding the behavioural pattern with plotly
+
 ![Shift](images/shift.PNG)
-Activities
+
+Activities: Plotting with the squirrel activities 
+
 ![Activities](images/activities.PNG)
-Interaction
+
+Interaction: Interaction level of the squirrels by the percentage of their count and faceted by fur color
+
 ![Interaction](images/interaction.PNG)
