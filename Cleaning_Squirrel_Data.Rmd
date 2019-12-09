@@ -1,0 +1,71 @@
+---
+title: "final project"
+output: html_document
+---
+
+```{r libraries}
+library(readr)
+library(leaflet)
+library(tidyverse)
+libr
+```
+
+
+
+```{r upload data}
+squirrels <- readr::read_csv("./nyc_squirrels.csv")
+```
+
+
+filter out fur colors
+
+```{r random filters }
+squirrels_fil <- squirrels %>%
+    filter(primary_fur_color == "Gray"|primary_fur_color =="Black"|primary_fur_color =="Cinnamon") 
+  
+
+```
+
+
+create new variable "interaction" and use if else to fill per T/F. remove NA values
+
+```{r}
+
+squirrels_int <- squirrels_fil %>%
+  mutate(interaction = ifelse(approaches==TRUE,"approaches",ifelse(indifferent == TRUE,"indifferent",ifelse(runs_from == TRUE, "runs away", NA)))) %>%
+ filter(interaction == "approaches" | interaction == "indifferent" |interaction == "runs away" )
+
+
+```
+
+
+create new variable "activities" and use if else to fill per T/F. remove NA values
+
+```{r}
+
+squirrels_act <- squirrels_int %>%
+   mutate(activities = ifelse(running==TRUE,"running",ifelse(chasing == TRUE,"chasing",ifelse(climbing == TRUE, "climbing", ifelse(eating == TRUE, "eating",ifelse(foraging == TRUE, "foraging",NA)))))) %>%
+  filter(activities == "running" |activities == "chasing" |activities == "climbing" |activities == "eating" |activities == "foraging")
+  
+
+```
+
+select out useful attributes and remove any remaining missing values
+
+```{r}
+
+squirrels_fin <- squirrels_act %>%
+  dplyr::select(long, lat, unique_squirrel_id, shift, date, age, primary_fur_color, activities, interaction, lat_long )
+
+squirrels_fin <- na.omit(squirrels_fin )
+```
+
+export to csv
+
+```{r}
+
+write.csv(squirrels_fin, file = "squirrels_fin.csv",row.names=FALSE)
+
+```
+
+
