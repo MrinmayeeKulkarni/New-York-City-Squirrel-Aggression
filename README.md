@@ -1,5 +1,6 @@
 # New York City Squirrel Aggression
 Analyzing the New York city squirrel aggression problem.
+Project by: Mrinmayee Kulkarni, Andrew Grant, Kayla Harasymchuck, Katie Brizendine
 
 https://andrew-grant.shinyapps.io/project/
 Presentation: http://rpubs.com/agrant26/558175
